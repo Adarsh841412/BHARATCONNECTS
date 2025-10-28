@@ -8,6 +8,7 @@ const user = require('./../models/user');
 
 //GET Details of current logged-in user
 router.get('/get-logged-user', authMiddleware, async (req, res) => {
+  
     try{
         const user = await User.findOne({_id: req.body.userId});
 
@@ -25,6 +26,7 @@ router.get('/get-logged-user', authMiddleware, async (req, res) => {
 });
 
 router.get('/get-all-users', authMiddleware, async (req, res) => {
+    console.log("all good")
     try{
         const userid = req.body.userId;
         const allUsers = await User.find({_id: {$ne: userid}});

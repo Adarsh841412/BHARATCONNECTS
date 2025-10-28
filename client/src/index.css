@@ -16,7 +16,7 @@ body{
 *************CSS STYLES FOR LOGIN & SIGNUP**************
 ********************************************************/
 .container-back-img{
-  background-image: url('./../public/images/quick-chat-app-background.jpg');
+  background-image: url('./../public/images/quick-chat-app-backgroundcopy.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -26,7 +26,7 @@ body{
 }
 .container-back-color{
   background-color: #e74c3c;
-  opacity: 0.7;
+  opacity: 0.1;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -199,12 +199,31 @@ body{
   border-bottom: #bbb 1px solid;
 }
 
-.app-logo{
+/* REPLACES your old .app-logo style */
+.app-logo {
   display: flex;
-  flex-wrap: nowrap;
-  color: #28282B;
+  align-items: center; /* Vertically centers the icon and text */
   font-size: 25px;
-  font-weight: bold;
+}
+
+/* This targets ONLY the icon in the logo */
+.app-logo i {
+  color: #28282B; /* Keep the icon a neutral dark color */
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+/* Styles the "BHARAT" part */
+.logo-part-1 {
+  font-weight: 700; /* Bold */
+  color: #e74c3c; /* Your original Saffron/Red */
+}
+
+/* Styles the "CONNECT" part */
+.logo-part-2 {
+  font-weight: 500; /* Medium */
+  color: #28a745; /* A clean, modern Green */
+  margin-left: 6px;
 }
 
 i{
@@ -488,7 +507,8 @@ i{
     display: none;
   }
   .user-search-area, .unread-message-counter {
-      display: none;
+       display: block !important;
+    margin-bottom: 15px;
   }
   .app-sidebar{
       width: 15%;
@@ -596,3 +616,221 @@ input[type="file"]::file-selector-button:active {
   font-size: 18px;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------- RESPONSIVE FIXES ---------------------- */
+
+/* Small tablets and large phones */
+@media only screen and (max-width: 768px) {
+
+  /* General fixes */
+  body {
+    overflow-y: auto;
+  }
+
+  .card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .form .column input {
+    width: 100%;
+  }
+
+  .container {
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  /* Header */
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .app-logo {
+    font-size: 22px;
+  }
+
+  .logged-user-profile-pic {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px;
+  }
+
+  /* Main layout */
+  .main-content {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    padding: 10px;
+    order: 2;
+  }
+
+  .app-chat-area {
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
+    order: 1;
+    padding: 15px;
+  }
+
+  /* User list items */
+  .filter-user-display {
+    align-items: center;
+  }
+
+  .filtered-user, .selected-user {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter-user-details {
+    width: 100%;
+  }
+
+  .user-display-name {
+    font-size: 15px;
+  }
+
+  .user-display-email {
+    display: none;
+  }
+
+  .user-start-chat {
+    text-align: right;
+  }
+
+  /* Chat area */
+  .main-chat-area {
+    max-height: 60vh;
+  }
+
+  .send-message-input {
+    height: 45px;
+  }
+
+  .send-message-btn,
+  .send-emoji-btn,
+  .send-image-btn {
+    font-size: 22px;
+  }
+
+  .send-message-btn {
+    right: 5px;
+  }
+  .send-emoji-btn {
+    right: 40px;
+  }
+  .send-image-btn {
+    right: 70px;
+  }
+
+  .send-message-div {
+    margin-top: 15px;
+  }
+
+  /* Profile page */
+  .profile-page-container {
+    flex-direction: column;
+    width: 95%;
+    margin: 50px auto;
+  }
+
+  .profile-pic-container,
+  .profile-info-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .user-profile-pic-upload,
+  .user-default-profile-avatar {
+    width: 160px;
+    height: 160px;
+    font-size: 80px;
+    line-height: 160px;
+  }
+
+  input[type="file"]::file-selector-button {
+    height: 35px;
+    padding: 0 12px;
+  }
+
+  .logout-button {
+    font-size: 16px;
+  }
+}
+
+/* Phones under 480px */
+@media only screen and (max-width: 480px) {
+  .app-logo {
+    font-size: 20px;
+  }
+
+  .card_title h1 {
+    font-size: 22px;
+  }
+
+  .form button {
+    font-size: 15px;
+  }
+
+  .send-message,
+  .received-message {
+    font-size: 13px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .user-default-avatar,
+  .user-selected-avatar,
+  .user-profile-image {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+  }
+
+  .app-header {
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 0 10px;
+  }
+
+  .message-container {
+    flex-direction: column;
+  }
+
+  .profile-page-container {
+    margin: 30px auto;
+    padding: 15px;
+  }
+}
+
+
+
+

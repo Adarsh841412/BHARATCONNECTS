@@ -18,6 +18,7 @@ function Login(){
         try{
             dispatch(showLoader());
             response = await loginUser(user);
+            console.log(response);
             dispatch(hideLoader());
 
             if(response.success){

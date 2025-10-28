@@ -24,10 +24,11 @@ function Header( {socket }){
 
     return (
             <div className="app-header">
-                <div className="app-logo">
-                    <i className="fa fa-comments" aria-hidden="true"></i>
-                    Quick Chat
-                    </div>
+              <div className="app-logo">
+  <i className="fa fa-comments" aria-hidden="true"></i>
+  <span className="logo-part-1">BHARAT</span>
+  <span className="logo-part-2">CONNECT</span>
+</div>
                 <div className="app-user-profile">
                     {user?.profilePic && <img src={user?.profilePic} alt="profile-pic" className="logged-user-profile-pic" onClick={ () => navigate('/profile')}></img>}
                     { !user?.profilePic && <div className="logged-user-profile-pic" onClick={ () => navigate('/profile')}>{ getInitials() }</div>}
