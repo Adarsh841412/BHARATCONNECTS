@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const url = "https://bharatconnects-server.onrender.com";
+export const url = "https://bharatconnects-server.onrender.com/";
 
 export const axiosInstance = axios.create({
   baseURL: url,
@@ -16,3 +16,4 @@ axiosInstance.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
