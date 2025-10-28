@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:true}))
 const server = require('http').createServer(app);
 
 const io = require('socket.io')(server, {cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://bharatconnects-client.onrender.com',
     methods: ['GET', 'POST']
 }})
 
@@ -72,4 +72,5 @@ io.on('connection', socket => {
 })
 
 module.exports = server;
+
 
